@@ -4,7 +4,7 @@ import com.sun.istack.internal.NotNull;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * File Utils, including file operation and file io.
@@ -53,19 +53,29 @@ public class FU {
          * @return 所删除的文件和文件夹的数目
          */
         public static int deleteFolder(@NotNull File dir) {
-            if (notDirectory(dir)) return 0;
-            File[] subs = getSubFiles(dir);
-            if (subs.length == 0) return 0;
-            int deleteNum = 0;
-            for (File sub : subs) {
-                if (sub.isDirectory()) {
-                    deleteNum += deleteFolder(sub);
-                } else {
-                    deleteNum += sub.delete() ? 1 : 0;
-                }
-            }
-            deleteNum += dir.delete() ? 1 : 0;
-            return deleteNum;
+            return operate(dir,
+                    new Filter() {
+                        @Override
+                        public boolean match(File file) {
+                            return true;
+                        }
+                    },
+                    new Operator() {
+                        @Override
+                        public boolean operate(File file) {
+                            return file.delete();
+                        }
+
+                        @Override
+                        public boolean IsOperateDir() {
+                            return true;
+                        }
+
+                        @Override
+                        public boolean operateDir(File dir) {
+                            return dir.delete();
+                        }
+                    });
         }
 
         /**
@@ -73,20 +83,34 @@ public class FU {
          *
          * @return 所删除的文件的数目
          */
-        public static int deleteFileAt(File dir, FileFilter filter) {
-            if (notDirectory(dir)) return 0;
+        public static int deleteFileAt(File dir, @NotNull Filter filter) {
+            return operate(dir, filter, new Operator() {
+                @Override
+                public boolean operate(File file) {
+                    return file.delete();
+                }
+            });
+        }
+
+        /**
+         * 使用自实现的文件操作类对匹配的文件进行操作，返回影响的文件个数
+         */
+        public static int operate(File dir, @NotNull Filter filter, @NotNull Operator operator) {
             File[] subs = getSubFiles(dir);
-            if (subs.length == 0) return 0;
-            int deleteNum = 0;
+            int num = 0;
             for (File sub : subs) {
                 if (sub.isDirectory()) {
-                    deleteNum += deleteFileAt(sub, filter);
+                    num += operate(sub, filter, operator);
                 } else if (filter.match(sub)) {
-                    deleteNum += sub.delete() ? 1 : 0;
+                    num += operator.operate(sub) ? 1 : 0;
                 }
             }
-            return deleteNum;
+            if (operator.IsOperateDir()) {
+                num += operator.operateDir(dir) ? 1 : 0;
+            }
+            return num;
         }
+
     }
 
     /**
@@ -159,7 +183,7 @@ public class FU {
          */
         @NotNull
         public static String[] readLines1(@NotNull File file, Charset charset) {
-            if (!canRead(file)) return new String[] {};
+            if (!canRead(file)) return new String[]{};
             ArrayList<String> ls = new ArrayList<>();
             String str;
             try {
@@ -226,7 +250,33 @@ public class FU {
         }
     }
 
-    public interface FileFilter {
-        boolean match(File file);
+    /**
+     * 自定义文件筛选接口，用于匹配文件，匹配成功返回true
+     */
+    public interface Filter {
+        default boolean match(File file) {
+            return false;
+        }
+    }
+
+    /**
+     * 自定义文件操作接口，操作成功返回true
+     */
+    public interface Operator {
+        default boolean operate(File file) {
+            return false;
+        }
+
+        default boolean operate(File f1, File f2) {
+            return false;
+        }
+
+        default boolean IsOperateDir() {
+            return false;
+        }
+
+        default boolean operateDir(File dir) {
+            return false;
+        }
     }
 }
