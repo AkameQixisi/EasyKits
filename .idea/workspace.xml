@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1228773e-d6b9-4b6d-b247-58e97d85c533" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="1228773e-d6b9-4b6d-b247-58e97d85c533" name="Default Changelist" comment="修改了File Utils的部分代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyKits/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyKits/TestMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyKits/file/FU$FileFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyKits/file/FU$IO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyKits/file/FU$IO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyKits/file/FU$OP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyKits/file/FU$OP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EasyKits/file/FU.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EasyKits/file/FU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/FU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/FU.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,12 +76,35 @@
       <workItem from="1626532668641" duration="4580000" />
       <workItem from="1626537610712" duration="19000" />
       <workItem from="1626538152303" duration="96000" />
-      <workItem from="1626538259748" duration="18000" />
+      <workItem from="1626538259748" duration="271000" />
+      <workItem from="1626538635022" duration="275000" />
     </task>
+    <task id="LOCAL-00001" summary="修改了File Utils的部分代码">
+      <created>1626538511458</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626538511459</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改了File Utils的部分代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了File Utils的部分代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="713" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1626452017528">
@@ -108,10 +123,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626451862472" />
-    <state x="560" y="112" width="930" height="815" key="CommitChangelistDialog2" timestamp="1626538350278">
+    <state x="560" y="112" width="948" height="814" key="CommitChangelistDialog2" timestamp="1626538800897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="112" width="930" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1626538350278" />
+    <state x="560" y="112" width="948" height="814" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1626538800896" />
+    <state x="258" y="85" width="1536" height="860" key="DiffContextDialog" timestamp="1626538911851">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="258" y="85" width="1536" height="860" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626538911851" />
     <state width="1877" height="422" key="GridCell.Tab.0.bottom" timestamp="1626537629267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -128,6 +147,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="422" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626537629267" />
+    <state x="793" y="242" key="RollbackChangesDialog" timestamp="1626538905363">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="793" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626538905363" />
+    <state x="809" y="223" width="630" height="680" key="VCS.ChangeListViewerDialog" timestamp="1626538839687">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="809" y="223" width="630" height="680" key="VCS.ChangeListViewerDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626538839687" />
     <state x="752" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626538230576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -136,5 +163,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="284" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626448867250" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1626538910456">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1626538910456" />
   </component>
 </project>
